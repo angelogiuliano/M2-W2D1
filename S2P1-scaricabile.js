@@ -1,10 +1,17 @@
-//ESERCIZI SUGLI IF: 
+//ESERCIZI SUGLI IF:
 
 /* ESERCIZIO 1
  Scrivi un algoritmo per trovare il più grande tra due numeri interi.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let num1 = 1;
+let num2 = 4;
+
+if (num1 > num2) {
+  console.log(num1 + " è il numero più grande");
+} else {
+  console.log(num2 + " è il numero più grande");
+}
 
 /*
 ESERCIZIO 2
@@ -17,21 +24,43 @@ ESERCIZIO 2
   num >= 20 - mostra in console "Huge"
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let numero = 15;
 
-//ESERCIZI SUI CICLI: 
+if (numero < 5) {
+  console.log("Tiny");
+} else if (numero < 10) {
+  console.log("Small");
+} else if (numero < 15) {
+  console.log("Medium");
+} else if (numero < 20) {
+  console.log("Large");
+} else if (numero >= 20) {
+  console.log("Huge");
+}
+
+//ESERCIZI SUI CICLI:
 
 /* ESERCIZIO 3
   Mostra i numeri da 0 a 10 (incluso) in ordine ascendente, ma evitando di mostrare i numeri 3 e 8 (suggerimento: ripassa l'uso di "continue").
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+for (let i = 0; i < 11; i++) {
+  if (i !== 3 && i !== 8) {
+    console.log(i);
+  }
+}
 
 /* ESERCIZIO 11
-  Scrivi un ciclo in JavaScript per iterare da 0 a 15. Per ciascun elemento, il ciclo deve controllare the il valore corrente sia pari o dispari, e mostrare il risultato in console.
+  Scrivi un ciclo in JavaScript per iterare da 0 a 15. Per ciascun elemento, il ciclo deve controllare che il valore corrente sia pari o dispari, e mostrare il risultato in console.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+for (let i = 0; i < 16; i++) {
+  if (i % 2 === 0) {
+    console.log(i + " è pari");
+  } else {
+    console.log(i + " è dispari");
+  }
+}
 
 //ESERCIZI EXTRA NON OBBLIGATORI
 
@@ -39,7 +68,21 @@ ESERCIZIO 2
   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let numero1 = 4;
+let numero2 = 8;
+
+if (
+  numero1 === 8 ||
+  numero2 === 8 ||
+  numero1 - numero2 === 8 ||
+  numero2 - numero1 === 8 ||
+  numero1 + numero2 === 8 ||
+  numero2 + numero1 === 8
+) {
+  console.log("giusto");
+} else {
+  console.log("non è 8 in nessun caso");
+}
 
 /* ESERCIZIO EXTRA 2
 Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
@@ -47,23 +90,58 @@ C'è una promozione in corso: se il totale del carrello supera 50, l'utente ha d
 Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let totalShoppingCart = 50;
+let spedizione = 10;
+
+if (totalShoppingCart > 50) {
+  console.log("dovrai pagare " + totalShoppingCart + " euro");
+} else {
+  console.log("dovrai pagare " + (totalShoppingCart + spedizione) + " euro");
+}
 
 /* ESERCIZIO EXTRA 3
   Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando, usando l'algoritmo del codice precedente, se le spedizioni siano gratuite oppure no e e calcolando il totale.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+if (totalShoppingCart > 50) {
+  console.log(
+    "dovrai pagare " +
+      (totalShoppingCart - (totalShoppingCart * 0, 2)) +
+      " euro"
+  );
+} else {
+  console.log(
+    "dovrai pagare " +
+      (totalShoppingCart - (totalShoppingCart * 0, 2) + spedizione) +
+      " euro"
+  );
+}
 
 /*  ESERCIZIO EXTRA 4
-  Usa un operatore ternaio per assegnare ad una variabile chiamata "gender" i valori "male" o "female".
+  Usa un operatore ternario per assegnare ad una variabile chiamata "gender" i valori "male" o "female".
   La scelta deve essere basata sul valore di un'altra variabile booleana chiamata isMale.
   Es. se isMale e' vero, il valore di gender deve essere "male"
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let isMale = false;
+let gender;
+
+isMale ? (gender = "male") : (gender = "female");
+console.log(gender);
 
 /* ESERCIZIO EXTRA 5
   Scrivi un algoritmo che iteri i numeri da 1 a 100, stampandoli in console. Se un valore tuttavia è multiplo di 3 (operatore modulo!), stampa al suo posto la parola "Fizz" e se il numero è multiplo di 5, stampa "Buzz". Se le condizioni si verificano entrambe, stampa "FizzBuzz".
 */
+
+for (let i = 0; i < 101; i++) {
+  if (i % 3 !== 0 && i % 5 !== 0) {
+    console.log(i);
+  } else if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  }
+}
